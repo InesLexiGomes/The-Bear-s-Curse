@@ -18,7 +18,7 @@ public class BrosOnEnemies : MonoBehaviour
     {
         if (bro.Brothers == true)
         {
-            rb.position = new Vector2(rb.position.x + 200 * Time.deltaTime, rb.position.y);
+            rb.velocity = new Vector2(rb.velocity.x + 100, rb.velocity.y);
         }
     }
 }
