@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 205906521384003861}
   - component: {fileID: 5295659997713130455}
   - component: {fileID: 638820069086315640}
-  - component: {fileID: 746614023790669753}
   - component: {fileID: 4210748241637997148}
   - component: {fileID: 3735700672083725779}
   - component: {fileID: 4340900075382982751}
@@ -135,33 +134,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 5.12}
   m_EdgeRadius: 0
---- !u!50 &746614023790669753
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717790900396220876}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &4210748241637997148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +149,7 @@ MonoBehaviour:
   _showInfo: 1
   _explanation: "When a collision with a trigger with tags [Player] starts:\n         
     spawns prefab Alavanca Ativada at the position of this object (Alavanca)\n         
-    Destroys object Port\xE3o\n          destroys this object\n"
+    destroys this object\n          destroys this object\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -230,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: "Destroys object Port\xE3o"
+  _explanation: Destroys this object
   description: 
   enableAction: 1
   hasTags: 0

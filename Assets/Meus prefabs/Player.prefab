@@ -430,6 +430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5473135127055296307}
+  - component: {fileID: 4752534864388924485}
   - component: {fileID: 7326269416817345171}
   - component: {fileID: 1041380964993678074}
   - component: {fileID: 6556149925751320073}
@@ -480,6 +481,21 @@ Transform:
   - {fileID: 6374697696216985111}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4752534864388924485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599772130724859623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a012a5755c57b6944b379e31d1394cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  activeTime: 0
+  distance: 0
 --- !u!212 &7326269416817345171
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1341,7 +1357,7 @@ MonoBehaviour:
   - {x: 0.35391515, y: -1.2204303, z: 0}
   m_ShapePathHash: -712884819
   m_Mesh: {fileID: 0}
-  m_InstanceId: -24584
+  m_InstanceId: 32188
   m_LocalBounds:
     m_Center: {x: -0.175511, y: 0.0046794415, z: 0}
     m_Extent: {x: 1.0470653, y: 1.3637619, z: 0}
