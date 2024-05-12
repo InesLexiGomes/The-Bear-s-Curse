@@ -190,7 +190,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8451a532628bdf346b3a9393331aeb8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e4f4497c3687ed49bd638a132e2c06f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -370,14 +370,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
+    oldSize: {x: 1.06, y: 3.03}
     newSize: {x: 5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.3, y: 1}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!114 &4380732526330064641
 MonoBehaviour:
@@ -650,19 +650,19 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.3277037, y: -1.6694148, z: -0.000000013137154}
-  - {x: -0.30491105, y: 1.3506207, z: 0.0000002978436}
-  - {x: -0.6541781, y: 1.3626633, z: 0.0000002978436}
-  - {x: -0.2116971, y: 2.186866, z: -0.000000013137154}
-  - {x: 0.2129696, y: 1.3506207, z: 0.0000002978436}
-  - {x: -0.1122098, y: 1.3385756, z: 0.0000002978436}
-  - {x: -0.10356403, y: -1.6853874, z: -0.000000013137154}
-  m_ShapePathHash: -1209140446
+  - {x: -0.03445213, y: -1.3303407, z: -0.000000013137154}
+  - {x: -0.03990814, y: 1.1498587, z: 0.0000002978436}
+  - {x: -0.33296183, y: 1.0414443, z: 0.0000002978436}
+  - {x: 0.0051304977, y: 1.4962425, z: -0.000000013137154}
+  - {x: 0.38161126, y: 1.0374306, z: 0.0000002978436}
+  - {x: 0.1046125, y: 1.121752, z: 0.0000002978436}
+  - {x: 0.08888135, y: -1.318821, z: -0.000000013137154}
+  m_ShapePathHash: 654064231
   m_Mesh: {fileID: 0}
-  m_InstanceId: -69902
+  m_InstanceId: -22752
   m_LocalBounds:
-    m_Center: {x: -0.22060424, y: 0.25073934, z: 0}
-    m_Extent: {x: 0.43357384, y: 1.9361267, z: 0}
+    m_Center: {x: 0.024324715, y: 0.08295095, z: 0}
+    m_Extent: {x: 0.35728654, y: 1.4132917, z: 0}
 --- !u!1 &2993118627383396588
 GameObject:
   m_ObjectHideFlags: 0

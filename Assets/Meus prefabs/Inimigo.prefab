@@ -293,9 +293,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a0ae92dbf81358243ba050fa28258f84, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f27538a624a4b74db94f7c3f9e0e657, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -364,7 +364,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 3, y: 4}
+  m_Size: {x: 3, y: 5}
   m_Direction: 0
 --- !u!70 &5217686365223311475
 CapsuleCollider2D:
@@ -399,7 +399,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 3, y: 4}
+  m_Size: {x: 3, y: 5}
   m_Direction: 0
 --- !u!114 &7336743236200006680
 MonoBehaviour:
@@ -416,7 +416,7 @@ MonoBehaviour:
   _showInfo: 1
   _explanation: "When a collision with a trigger with tags [Mortais pra inimigos]
     starts:\n          destroys this object\n          spawns prefab Dead Body at
-    the position of this object (Inimigo)\n"
+    the position of this object (Inimigo (4))\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 0
@@ -489,10 +489,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: 'Follows the [Inimigo] path, at 200 units per second.
+  _explanation: 'Follows the [Inimigo (4)] path, at 200 units per second.
 
-    The object
-    will loop back to the beginning at the end of the path.
+    The
+    object will loop back to the beginning at the end of the path.
 
 '
   description: 
@@ -536,9 +536,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showInfo: 1
   _explanation: "When ((DistanceTo(Tag[Player]) <= 200):\n          disables component
-    Inimigo (OkapiKit.MovementPath)\n          enables component Inimigo (OkapiKit.MovementFollow)\n         
-    enables object Text (TMP)\n\nThis trigger will execute every single frame when
-    the conditions are true."
+    Inimigo (4) (OkapiKit.MovementPath)\n          enables component Inimigo (4)
+    (OkapiKit.MovementFollow)\n          enables object Text (TMP)\n\nThis trigger
+    will execute every single frame when the conditions are true."
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: Enables component Inimigo (OkapiKit.MovementFollow)
+  _explanation: Enables component Inimigo (4) (OkapiKit.MovementFollow)
   description: 
   enableAction: 1
   hasTags: 0
@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: Disables component Inimigo (OkapiKit.MovementPath)
+  _explanation: Disables component Inimigo (4) (OkapiKit.MovementPath)
   description: 
   enableAction: 1
   hasTags: 0
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: Disables component Inimigo (OkapiKit.MovementFollow)
+  _explanation: Disables component Inimigo (4) (OkapiKit.MovementFollow)
   description: 
   enableAction: 1
   hasTags: 0
@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: Enables component Inimigo (OkapiKit.MovementPath)
+  _explanation: Enables component Inimigo (4) (OkapiKit.MovementPath)
   description: 
   enableAction: 1
   hasTags: 0
@@ -698,8 +698,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showInfo: 1
   _explanation: "When a collision with a trigger with tags [Player] starts:\n         
-    disables component Inimigo (OkapiKit.MovementFollow)\n          enables component
-    Inimigo (OkapiKit.MovementPath)\n          disables object Text (TMP)\n"
+    disables component Inimigo (4) (OkapiKit.MovementFollow)\n          enables component
+    Inimigo (4) (OkapiKit.MovementPath)\n          disables object Text (TMP)\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showInfo: 1
-  _explanation: Spawns prefab Dead Body at the position of this object (Inimigo)
+  _explanation: Spawns prefab Dead Body at the position of this object (Inimigo (4))
   description: 
   enableAction: 1
   hasTags: 0
@@ -799,8 +799,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showInfo: 1
   _explanation: "When a collision with a trigger with tags [Flecha] starts:\n         
-    enables component Inimigo (OkapiKit.MovementFollow)\n          disables component
-    Inimigo (OkapiKit.MovementPath)\n          enables object Text (TMP)\n"
+    enables component Inimigo (4) (OkapiKit.MovementFollow)\n          disables component
+    Inimigo (4) (OkapiKit.MovementPath)\n          enables object Text (TMP)\n"
   description: 
   enableTrigger: 1
   allowRetrigger: 1
