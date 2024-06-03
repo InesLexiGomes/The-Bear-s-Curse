@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class MovementController : MonoBehaviour
 {
-    private float move;
-    [SerializeField]
-    private int speed;
+    [SerializeField] private int speed;
+    [SerializeField] private int jumpSpeed;
 
-    Rigidbody2D rb;
+    private float move;
+
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
+
+    private Rigidbody2D rb;
 
     private void Start()
     {
@@ -19,7 +23,15 @@ public class MovementController : MonoBehaviour
     {
         move = Input.GetAxis("Horizontal");
 
-        Flip();
+        if (Input.GetKeyDown("up") && IsGrounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+        }
+
+        // When walking backwards flip
+        if (rb.velocity.x < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
+        // When walking forwards unflip
+        else if (rb.velocity.x > 0) transform.rotation = Quaternion.identity;
     }
 
     private void FixedUpdate()
@@ -27,11 +39,8 @@ public class MovementController : MonoBehaviour
         rb.velocity = new Vector2(move*speed, rb.velocity.y);
     }
 
-    private void Flip()
+    private bool IsGrounded()
     {
-        // When walking backwards flip
-        if (rb.velocity.x < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
-        // When walking forwards unflip
-        else if (rb.velocity.x > 0) transform.rotation = Quaternion.identity;
+        return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(5f, 20f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
 }
