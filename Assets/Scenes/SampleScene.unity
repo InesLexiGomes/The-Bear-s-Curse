@@ -1160,9 +1160,9 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!4 &2032640336 stripped
+--- !u!4 &1502443133 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8942543840037268413, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1542017405159353241, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
   m_PrefabInstance: {fileID: 804758851380834025}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &804758851380834025
@@ -1173,14 +1173,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1542017405159353241, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -20.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3781112504381243354, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 369a4c04e51fc2d42b1c6288c160961d, type: 2}
-    - target: {fileID: 3781112504381243354, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3781112504381243354, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
       propertyPath: m_GravityScale
       value: 10
@@ -1236,10 +1236,14 @@ PrefabInstance:
     - target: {fileID: 4561637990847649646, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
       propertyPath: groundCheck
       value: 
-      objectReference: {fileID: 2032640336}
+      objectReference: {fileID: 1502443133}
+    - target: {fileID: 4561637990847649646, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
+      propertyPath: groundCheckRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4561637990847649646, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
       propertyPath: groundLayer.m_Bits
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4663887417725242366, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
       propertyPath: m_Name
