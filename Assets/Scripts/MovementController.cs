@@ -28,7 +28,9 @@ public class MovementController : MonoBehaviour
 
     void Flip()
     {
-        if(move < -0.01f) transform.localScale = new Vector3(-1,1,1);
-        if(move > 0.01f) transform.localScale = new Vector3(1,1,1);
+        // When walking backwards flip
+        if (rb.velocity.x < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
+        // When walking forwards unflip
+        else if (rb.velocity.x > 0) transform.rotation = Quaternion.identity;
     }
 }
