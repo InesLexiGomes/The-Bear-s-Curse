@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class MovementController : MonoBehaviour
 {
-    Vector2 move;
+    float move;
     public int speed;
 
     Rigidbody2D rb;
@@ -16,19 +16,19 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
-        move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        move = Input.GetAxis("Horizontal");
 
         Flip();
     }
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(move.x*speed, rb.velocity.y);
+        rb.velocity = new Vector2(move*speed, rb.velocity.y);
     }
 
     void Flip()
     {
-        if(move.x < -0.01f) transform.localScale = new Vector3(-1,1,1);
-        if(move.x > 0.01f) transform.localScale = new Vector3(1,1,1);
+        if(move < -0.01f) transform.localScale = new Vector3(-1,1,1);
+        if(move > 0.01f) transform.localScale = new Vector3(1,1,1);
     }
 }
