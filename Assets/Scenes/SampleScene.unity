@@ -1231,12 +1231,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4561637990847649646, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
       propertyPath: jumpSpeed
-      value: 20
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4561637990847649646, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
       propertyPath: groundCheck
       value: 
       objectReference: {fileID: 1502443133}
+    - target: {fileID: 4561637990847649646, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
+      propertyPath: maxJumpTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561637990847649646, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
+      propertyPath: defaultGravity
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4561637990847649646, guid: 936d7f320149a304fadaa76893f947c0, type: 3}
       propertyPath: groundCheckRadius
       value: 5
