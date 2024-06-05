@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask groundCheckLayers;
 
     // Variables for the Shoot method
+    [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform bowPoint;
     [SerializeField] private GameObject arrow;
     private int arrowAmount = 10;
@@ -92,8 +93,19 @@ public class Player : MonoBehaviour
         // When the player is standing still and has equal to or more than 1 arrow they can shoot
         if (rb.velocity.x == 0 && arrowAmount >= 1)
         {
+            // Transform mouse position to world position
+            Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+
+            // Sets target from mouse position and the spawn point for the arrow
+            Vector2 target = new Vector3(mousePos.x - bowPoint.position.x, mousePos.y - bowPoint.position.y);
+
+            // Converts target vector to a rotation
+            float rotation = Mathf.Atan2(target.x, target.y) * 180 / Mathf.PI;
+
             // Creates instance of prefab
-            Instantiate(arrow, bowPoint);
+            Instantiate(arrow, bowPoint.position, Quaternion.Euler(0,0,-rotation));
+
+            arrowAmount--;
         }
         else Debug.Log("Can't shoot right now.");
     }
