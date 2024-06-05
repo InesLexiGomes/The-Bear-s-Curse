@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     // General variables
     [SerializeField] private int defaultGravity;
