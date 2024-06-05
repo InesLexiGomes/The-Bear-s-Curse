@@ -17,7 +17,13 @@ public class Player : MonoBehaviour
     [SerializeField] private int jumpSpeed;
     [SerializeField] private float maxJumpTime;
     private float jumpTime;
-    
+
+    // Variables for IsClimbing method
+    [SerializeField] private Transform climbCheck;
+    [SerializeField] private int climbCheckRadius;
+    [SerializeField] private LayerMask climbLayers;
+    private float deltaY;
+
     // Variables for IsGrounded method
     [SerializeField] private Transform groundCheck;
     [SerializeField] private int groundCheckRadius;
@@ -42,6 +48,13 @@ public class Player : MonoBehaviour
         // Determines velocity based on a fixed speed value and the horizontal movement input
         deltaX = Input.GetAxis("Horizontal");
         currentVelocity.x = deltaX * speed;
+
+        // Only allows verticall movement when climbing
+        if (IsClimbing())
+        {
+            deltaY = Input.GetAxis("Vertical");
+            currentVelocity.y = deltaY * speed;
+        }
 
         // While the player is grounded they can jump
         if ((Input.GetButtonDown("Jump")) && IsGrounded())
@@ -79,13 +92,13 @@ public class Player : MonoBehaviour
         return (collider != null);
     }
 
-    private void OnDrawGizmosSelected()
+    private bool IsClimbing()
     {
-        if (groundCheck != null)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawSphere(groundCheck.position, groundCheckRadius);
-        }
+        // Checks for an overlap in the groundCheck and Ground Colliders
+        Collider2D collider = Physics2D.OverlapCircle(climbCheck.position, climbCheckRadius, climbLayers);
+
+        // If the collider exists (isn't null) returns true, otherwise returns false
+        return (collider != null);
     }
 
     private void Shoot()
@@ -103,10 +116,20 @@ public class Player : MonoBehaviour
             float rotation = Mathf.Atan2(target.x, target.y) * 180 / Mathf.PI;
 
             // Creates instance of prefab
-            Instantiate(arrow, bowPoint.position, Quaternion.Euler(0,0,-rotation));
+            Instantiate(arrow, bowPoint.position, Quaternion.Euler(0, 0, -rotation));
 
             arrowAmount--;
         }
         else Debug.Log("Can't shoot right now.");
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(groundCheck.position, groundCheckRadius);
+            Gizmos.DrawSphere(climbCheck.position, climbCheckRadius);
+        }
     }
 }
