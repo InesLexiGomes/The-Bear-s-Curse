@@ -4,20 +4,29 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private int speed;
-    [SerializeField] private int jumpSpeed;
-    [SerializeField] private float maxJumpTime;
+    // General variables
     [SerializeField] private int defaultGravity;
-    private float jumpTime;
+    private Rigidbody2D rb;
 
+    // Variables for movement
+    [SerializeField] private int speed;
     private Vector2 currentVelocity;
     private float deltaX;
 
+    // Variables for jumping
+    [SerializeField] private int jumpSpeed;
+    [SerializeField] private float maxJumpTime;
+    private float jumpTime;
+    
+    // Variables for IsGrounded method
     [SerializeField] private Transform groundCheck;
     [SerializeField] private int groundCheckRadius;
     [SerializeField] private LayerMask groundCheckLayers;
 
-    private Rigidbody2D rb;
+    // Variables for the Shoot method
+    [SerializeField] private Transform bowPoint;
+    [SerializeField] private GameObject arrow;
+    private int arrowAmount = 10;
 
     private void Start()
     {
@@ -55,6 +64,9 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.x < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
         // When walking forwards unflip
         else if (rb.velocity.x > 0) transform.rotation = Quaternion.identity;
+
+        // When you press the fire button you shoot
+        if (Input.GetButtonUp("Fire1")) Shoot();
     }
 
     private bool IsGrounded()
@@ -73,5 +85,16 @@ public class PlayerMovement : MonoBehaviour
             Gizmos.color = Color.green;
             Gizmos.DrawSphere(groundCheck.position, groundCheckRadius);
         }
+    }
+
+    private void Shoot()
+    {
+        // When the player is standing still and has equal to or more than 1 arrow they can shoot
+        if (rb.velocity.x == 0 && arrowAmount >= 1)
+        {
+            // Creates instance of prefab
+            Instantiate(arrow, bowPoint);
+        }
+        else Debug.Log("Can't shoot right now.");
     }
 }
