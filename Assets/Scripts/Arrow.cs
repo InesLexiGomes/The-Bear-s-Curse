@@ -22,9 +22,6 @@ public class Arrow : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider != null && ((1 << collider.gameObject.layer) & destroyLayers) != 0)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

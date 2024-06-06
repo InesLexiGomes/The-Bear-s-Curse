@@ -177,7 +177,7 @@ MonoBehaviour:
   groundCheckRadius: 5
   groundCheckLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 264
   mainCamera: {fileID: 7046423957220850229, guid: 9f5cc146f29f18f44b6152363291b949, type: 3}
   bowPoint: {fileID: 1777124993363164480}
   arrow: {fileID: 2505980384923986766, guid: ae59411f137338549bc3513d97e55d4b, type: 3}
