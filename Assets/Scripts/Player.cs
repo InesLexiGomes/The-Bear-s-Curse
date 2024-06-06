@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     // General variables
     [SerializeField] private int defaultGravity;
     private Rigidbody2D rb;
+    private Animator animator;
 
     // Variables for movement
     [SerializeField] private int speed;
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -81,6 +83,9 @@ public class Player : MonoBehaviour
 
         // When you press the fire button you shoot
         if (Input.GetButtonUp("Fire1")) Shoot();
+
+        // Animation
+        animator.SetFloat("AbsVelocityX", Mathf.Abs(currentVelocity.x));
     }
 
     private bool IsGrounded()
