@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultGravity: 5
   speed: 150
+  sprintMultiplier: 1.5
   jumpSpeed: 150
   maxJumpTime: 0.2
   climbCheck: {fileID: 1963744206136808974}

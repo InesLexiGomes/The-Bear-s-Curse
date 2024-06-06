@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     // Variables for movement
     [SerializeField] private int speed;
+    [SerializeField] private float sprintMultiplier;
     private Vector2 currentVelocity;
     private float deltaX;
 
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
         // Determines velocity based on a fixed speed value and the horizontal movement input
         deltaX = Input.GetAxis("Horizontal");
         currentVelocity.x = deltaX * speed;
+        if (Input.GetButton("Sprint")) currentVelocity.x *= sprintMultiplier;
 
         // Only allows verticall movement when climbing
         if (IsClimbing())
