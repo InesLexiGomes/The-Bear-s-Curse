@@ -37,6 +37,9 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject arrow;
     private int arrowAmount = 10;
 
+    // Variables for the bear form
+    private bool isBear = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -83,8 +86,8 @@ public class Player : MonoBehaviour
         // When walking forwards unflip
         else if (rb.velocity.x > 0) transform.rotation = Quaternion.identity;
 
-        // When you press the fire button you shoot
-        if (Input.GetButtonUp("Fire1")) Shoot();
+        // When you press the fire button and you're not in bear form you shoot
+        if (Input.GetButtonUp("Fire1") && !isBear) Shoot();
 
         // Animation
         animator.SetFloat("AbsVelocityX", Mathf.Abs(currentVelocity.x));
@@ -128,6 +131,11 @@ public class Player : MonoBehaviour
             arrowAmount--;
         }
         else Debug.Log("Can't shoot right now.");
+    }
+
+    private void BearAttack()
+    {
+
     }
 
     private void OnDrawGizmosSelected()
