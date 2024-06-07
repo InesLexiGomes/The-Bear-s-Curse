@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1552347170884457228}
   - component: {fileID: 4561637990847649646}
   - component: {fileID: 6416199783452885798}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1777124993363164480}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BowPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1542017405159353241}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1963744206136808974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ClimbCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
