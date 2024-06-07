@@ -10,6 +10,7 @@ public class Box : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private int groundCheckRadius;
     [SerializeField] private LayerMask groundCheckLayers;
+    [SerializeField] private Transform ropeCheck;
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +30,11 @@ public class Box : MonoBehaviour
     private bool IsGrounded()
     {
         // Checks for an overlap in the groundCheck and Ground Colliders
-        Collider2D collider = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundCheckLayers);
+        Collider2D groundCollider = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundCheckLayers);
+        Collider2D ropeCollider = Physics2D.OverlapCircle(ropeCheck.position, groundCheckRadius, groundCheckLayers);
 
         // If the collider exists (isn't null) returns true, otherwise returns false
-        return (collider != null);
+        return (groundCollider != null | ropeCollider != null);
     }
 
     private bool IsGrabbed()
