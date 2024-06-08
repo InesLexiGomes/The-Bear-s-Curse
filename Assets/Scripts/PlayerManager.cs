@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    private static PlayerManager _instance = null;
+    public static PlayerManager Instance => _instance;
+
     // The Prefabs that will be instantiated
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject bearPrefab;
 
+    // Checkpoint data
+    [SerializeField]
+    private int arrowsAtCheckpoint;
 
+    // Level transition and player usage data
+    public int ArrowCount { get; private set; }
+
+    void Awake()
+    {
+        // If there is no other player manager this one will be used and won't be destroyed on load
+        if (_instance == null)
+        {
+            _instance = this;
+
+            DontDestroyOnLoad(gameObject);
+        }
+        // If there already is one this object is destroyed
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        ArrowCount = 10;
     }
 
     // Update is called once per frame
@@ -39,5 +63,21 @@ public class PlayerManager : MonoBehaviour
             Instantiate(playerPrefab, bear.transform.position, bear.transform.rotation);
             Destroy(bear);
         }
+    }
+
+    public void UseArrow()
+    {
+        if (ArrowCount > 0) ArrowCount--;
+        else ArrowCount = 0;
+    }
+
+    public void PickUpArrow()
+    {
+        ArrowCount++;
+    }
+
+    public void SetArrowsAtCheckpoint(int ammount)
+    {
+        arrowsAtCheckpoint = ammount;
     }
 }
