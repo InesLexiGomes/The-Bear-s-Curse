@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1292219237}
   - component: {fileID: 1292219236}
   m_Layer: 3
-  m_Name: cama_partida
+  m_Name: BrokenBed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
