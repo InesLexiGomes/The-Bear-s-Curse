@@ -29,14 +29,21 @@ public class PlayerManager : MonoBehaviour
             _instance = this;
 
             DontDestroyOnLoad(gameObject);
-            Instantiate(playerPrefab, playerCoordsCheckpoint, Quaternion.Euler(0, 0, 0));
+
+            // Subscribe to the scene loaded event
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         // If there already is one this object is destroyed
         else
         {
-            Instantiate(playerPrefab, playerCoordsCheckpoint, Quaternion.Euler(0, 0, 0));
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from the scene loaded event to prevent memory leaks
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     // Start is called before the first frame update
@@ -49,6 +56,12 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Re-instantiate the player at the checkpoint position
+        Instantiate(playerPrefab, playerCoordsCheckpoint, Quaternion.identity);
     }
 
     private void SwitchPlayerBear()
