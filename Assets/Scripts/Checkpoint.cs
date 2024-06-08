@@ -10,7 +10,19 @@ public class Checkpoint : MonoBehaviour
     /// <param name="collider"> Will be player as it is the only one allowed to interact with it </param>
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        // Looks in the scene to find if there is a gameObject with the Player or Bear scripts
+        Player player = FindObjectOfType<Player>();
+        Bear bear = FindObjectOfType<Bear>();
+
         // Code to set the checkpoint will go here
+        if (player != null)
+        {
+            PlayerManager.Instance.SetPlayerCoordsAtCheckpoint(player.gameObject.transform.position);
+        }
+        if (bear != null)
+        {
+            PlayerManager.Instance.SetPlayerCoordsAtCheckpoint(bear.gameObject.transform.position);
+        }
 
         // Sets the ammount of arrows the player had at the checkpoint
         PlayerManager.Instance.SetArrowsAtCheckpoint(PlayerManager.Instance.ArrowCount);

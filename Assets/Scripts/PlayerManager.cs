@@ -14,6 +14,8 @@ public class PlayerManager : MonoBehaviour
     // Checkpoint data
     [SerializeField]
     private int arrowsAtCheckpoint;
+    [SerializeField]
+    private Vector2 playerCoordsCheckpoint;
 
     // Level transition and player usage data
     public int ArrowCount { get; private set; }
@@ -48,19 +50,19 @@ public class PlayerManager : MonoBehaviour
     private void SwitchPlayerBear()
     {
         // Looks in the scene to find if there is a gameObject with the Player or Bear scripts
-        GameObject player = FindObjectOfType<Player>().gameObject;
-        GameObject bear = FindObjectOfType<Bear>().gameObject;
+        Player player = FindObjectOfType<Player>();
+        Bear bear = FindObjectOfType<Bear>();
 
         // If there is a player it will instantiate the bearPrefab on the player's position
         if (player != null)
         {
-            Instantiate(bearPrefab, player.transform.position, player.transform.rotation);
+            Instantiate(bearPrefab, player.gameObject.transform.position, player.gameObject.transform.rotation);
             Destroy(player);
         }
         // If there is a bear it will instantiate the playerPrefab on the bear's position
         else if (bear != null)
         {
-            Instantiate(playerPrefab, bear.transform.position, bear.transform.rotation);
+            Instantiate(playerPrefab, bear.gameObject.transform.position, bear.gameObject.transform.rotation);
             Destroy(bear);
         }
     }
@@ -79,5 +81,10 @@ public class PlayerManager : MonoBehaviour
     public void SetArrowsAtCheckpoint(int ammount)
     {
         arrowsAtCheckpoint = ammount;
+    }
+
+    public void SetPlayerCoordsAtCheckpoint(Vector2 coords)
+    {
+        playerCoordsCheckpoint = coords;
     }
 }
