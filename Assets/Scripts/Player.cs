@@ -90,6 +90,7 @@ public class Player : MonoBehaviour
         animator.SetFloat("VelocityX", currentVelocity.x);
         animator.SetFloat("VelocityY", currentVelocity.y);
         animator.SetBool("IsJumping", !IsGrounded() && !IsClimbing());
+        animator.SetBool("IsSprinting", Input.GetButton("Sprint"));
         animator.SetBool("IsClimbing", IsClimbing());
         animator.SetBool("IsShooting", Input.GetButton("Fire1"));
         animator.SetBool("IsGrabbing", false);
