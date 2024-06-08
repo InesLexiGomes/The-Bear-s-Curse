@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class PlayerManager : MonoBehaviour
             _instance = this;
 
             DontDestroyOnLoad(gameObject);
+
+            // Subscribe to the scene loaded event
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         // If there already is one this object is destroyed
         else
@@ -35,6 +39,13 @@ public class PlayerManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from the scene loaded event to prevent memory leaks
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +56,12 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Re-instantiate the player at the checkpoint position
+        Instantiate(playerPrefab, playerCoordsCheckpoint, Quaternion.identity);
     }
 
     private void SwitchPlayerBear()
