@@ -90,7 +90,13 @@ public class Player : MonoBehaviour
         if (Input.GetButtonUp("Fire1") && !isBear) Shoot();
 
         // Animation
-        animator.SetFloat("AbsVelocityX", Mathf.Abs(currentVelocity.x));
+        animator.SetFloat("AbsVelocityX", Mathf.Abs(currentVelocity.x)/100);
+        animator.SetFloat("VelocityX", currentVelocity.x);
+        animator.SetFloat("VelocityY", currentVelocity.y);
+        animator.SetBool("IsJumping", !IsGrounded() && !IsClimbing());
+        animator.SetBool("IsClimbing", IsClimbing());
+        animator.SetBool("IsShooting", Input.GetButton("Fire1"));
+        animator.SetBool("IsGrabbing", false);
     }
 
     private bool IsGrounded()
