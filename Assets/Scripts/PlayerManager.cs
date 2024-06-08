@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -28,13 +29,16 @@ public class PlayerManager : MonoBehaviour
             _instance = this;
 
             DontDestroyOnLoad(gameObject);
+            Instantiate(playerPrefab, playerCoordsCheckpoint, Quaternion.Euler(0, 0, 0));
         }
         // If there already is one this object is destroyed
         else
         {
+            Instantiate(playerPrefab, playerCoordsCheckpoint, Quaternion.Euler(0, 0, 0));
             Destroy(gameObject);
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
