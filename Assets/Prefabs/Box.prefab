@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7666c1e7c6fffff43a0bc4c904a069ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrow: {fileID: 8174898783615951571, guid: d08783b10dba225429910254572cb0df, type: 3}
   groundCheck: {fileID: 1072219164531848724}
   groundCheckRadius: 2
   groundCheckLayers:

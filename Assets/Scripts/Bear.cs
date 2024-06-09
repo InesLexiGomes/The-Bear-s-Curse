@@ -24,6 +24,12 @@ public class Bear : MonoBehaviour
     [SerializeField] private int groundCheckRadius;
     [SerializeField] private LayerMask groundCheckLayers;
 
+    // Variables for Attack method
+    [SerializeField] private Transform boxCheck;
+    [SerializeField] private int boxCheckRadius;
+    [SerializeField] private LayerMask boxCheckLayers;
+    [SerializeField] private GameObject arrowPickupPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +70,8 @@ public class Bear : MonoBehaviour
         // When walking forwards unflip
         else if (rb.velocity.x > 0) transform.rotation = Quaternion.identity;
 
+        if (Input.GetButtonDown("Fire1")) Attack();
+
         // Animation
         animator.SetFloat("AbsVelocityX", Mathf.Abs(currentVelocity.x) / 100);
         //animator.SetFloat("VelocityY", currentVelocity.y);
@@ -78,5 +86,18 @@ public class Bear : MonoBehaviour
 
         // If the collider exists (isn't null) returns true, otherwise returns false
         return (collider != null);
+    }
+    
+    private void Attack()
+    {
+        // Checks for an overlap in the boxCheck and Box colliders
+        Collider2D collider = Physics2D.OverlapCircle(boxCheck.position, boxCheckRadius, boxCheckLayers);
+
+        // If it finds a box it gets destroyed
+        if (collider != null)
+        {
+            Instantiate(arrowPickupPrefab, collider.transform.position, collider.transform.rotation);
+            Destroy(collider.gameObject);
+        }
     }
 }
