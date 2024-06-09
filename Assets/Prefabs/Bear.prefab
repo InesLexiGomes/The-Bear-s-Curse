@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8341198487351383149}
   - component: {fileID: 202651353800718704}
   - component: {fileID: 6352504803278466978}
-  - component: {fileID: -3895529850813496946}
   - component: {fileID: 5743411200911563191}
   - component: {fileID: 3263946486826108924}
+  - component: {fileID: -3895529850813496946}
   m_Layer: 10
   m_Name: Bear
   m_TagString: Untagged
@@ -35,6 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5310392397741091542}
+  - {fileID: 1550370026066333792}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &202651353800718704
@@ -110,27 +111,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-3895529850813496946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2342063178286638545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be3e5ac1fd5f45348b6d808e98bc1384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultGravity: 10
-  speed: 150
-  jumpSpeed: 300
-  maxJumpTime: 0.2
-  groundCheck: {fileID: 5310392397741091542}
-  groundCheckRadius: 5
-  groundCheckLayers:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!70 &5743411200911563191
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -193,6 +173,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-3895529850813496946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2342063178286638545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be3e5ac1fd5f45348b6d808e98bc1384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultGravity: 10
+  speed: 150
+  jumpSpeed: 300
+  maxJumpTime: 0.2
+  groundCheck: {fileID: 5310392397741091542}
+  groundCheckRadius: 5
+  groundCheckLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  boxCheck: {fileID: 1550370026066333792}
+  boxCheckRadius: 10
+  boxCheckLayers:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &5598494499228472043
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +225,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -30.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8341198487351383149}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6857553399526041337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1550370026066333792}
+  m_Layer: 10
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1550370026066333792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6857553399526041337}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25.1, y: -16.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
