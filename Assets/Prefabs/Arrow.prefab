@@ -102,7 +102,7 @@ MonoBehaviour:
   destroyLayers:
     serializedVersion: 2
     m_Bits: 8
-  arrowSpeed: 500
+  arrowSpeed: 800
 --- !u!50 &492674908960019255
 Rigidbody2D:
   serializedVersion: 4
