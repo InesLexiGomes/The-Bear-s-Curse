@@ -21,6 +21,10 @@ public class PlayerManager : MonoBehaviour
     // Level transition and player usage data
     public int ArrowCount { get; private set; }
 
+    // Bear form variables
+    [SerializeField] private int maxCooldownTime;
+    private int cooldown;
+
     void Awake()
     {
         // If there is no other player manager this one will be used and won't be destroyed on load
@@ -49,13 +53,19 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ArrowCount = 10;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // If the input is pressed and the cooldown is above 0 the player switches between the 2 forms
+        if (Input.GetButtonDown("Transform") && (cooldown <= 0))
+        {
+            SwitchPlayerBear();
+        }
+        // Otherwise decrease cooldown
+        else if (cooldown > 0) cooldown--;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -74,32 +84,39 @@ public class PlayerManager : MonoBehaviour
         if (player != null)
         {
             Instantiate(bearPrefab, player.gameObject.transform.position, player.gameObject.transform.rotation);
-            Destroy(player);
+            Destroy(player.gameObject);
         }
         // If there is a bear it will instantiate the playerPrefab on the bear's position
-        else if (bear != null)
+        if (bear != null)
         {
             Instantiate(playerPrefab, bear.gameObject.transform.position, bear.gameObject.transform.rotation);
-            Destroy(bear);
+            Destroy(bear.gameObject);
         }
+
+        // Reset Cooldown
+        cooldown = maxCooldownTime;
     }
 
+    // When shot decrease arrowcount by 1
     public void UseArrow()
     {
         if (ArrowCount > 0) ArrowCount--;
         else ArrowCount = 0;
     }
 
+    // When picked up increase arrowcount by 1
     public void PickUpArrow()
     {
         ArrowCount++;
     }
 
+    // Sets the ammount of arrows that will be loaded at checkpoint
     public void SetArrowsAtCheckpoint(int ammount)
     {
         arrowsAtCheckpoint = ammount;
     }
 
+    // Sets coordinates that will be loaded at checkpoint
     public void SetPlayerCoordsAtCheckpoint(Vector2 coords)
     {
         playerCoordsCheckpoint = coords;

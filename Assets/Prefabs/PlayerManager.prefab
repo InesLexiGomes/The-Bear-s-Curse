@@ -48,3 +48,4 @@ MonoBehaviour:
   bearPrefab: {fileID: 2342063178286638545, guid: 0f692baf2d413c841a9bf13240c799b7, type: 3}
   arrowsAtCheckpoint: 0
   playerCoordsCheckpoint: {x: 0, y: 0}
+  maxCooldownTime: 5
