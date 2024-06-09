@@ -199,6 +199,7 @@ MonoBehaviour:
   boxCheckLayers:
     serializedVersion: 2
     m_Bits: 256
+  arrowPickupPrefab: {fileID: 8174898783615951571, guid: d08783b10dba225429910254572cb0df, type: 3}
 --- !u!1 &5598494499228472043
 GameObject:
   m_ObjectHideFlags: 0

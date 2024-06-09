@@ -28,6 +28,7 @@ public class Bear : MonoBehaviour
     [SerializeField] private Transform boxCheck;
     [SerializeField] private int boxCheckRadius;
     [SerializeField] private LayerMask boxCheckLayers;
+    [SerializeField] private GameObject arrowPickupPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +96,7 @@ public class Bear : MonoBehaviour
         // If it finds a box it gets destroyed
         if (collider != null)
         {
+            Instantiate(arrowPickupPrefab, collider.transform.position, collider.transform.rotation);
             Destroy(collider.gameObject);
         }
     }
