@@ -6,12 +6,19 @@ public class Box : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    // Prefab to be instantiated
+    [SerializeField] private GameObject arrow;
+
     // Variables for IsGrounded method
     [SerializeField] private Transform groundCheck;
     [SerializeField] private int groundCheckRadius;
     [SerializeField] private LayerMask groundCheckLayers;
     [SerializeField] private Transform ropeCheck;
 
+    private void OnDestroy()
+    {
+        Instantiate(arrow, rb.transform.position, rb.transform.rotation);
+    }
     // Start is called before the first frame update
     void Start()
     {
