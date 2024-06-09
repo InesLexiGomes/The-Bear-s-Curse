@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Application.Quit();
+        Destroy(PlayerManager.Instance);
+        SceneManager.LoadScene("Main Menu");
     }
 }
