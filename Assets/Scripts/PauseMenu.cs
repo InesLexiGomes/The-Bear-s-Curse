@@ -12,19 +12,41 @@ public class PauseMenu : MonoBehaviour
     }
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PlayerManager.Instance.CheckpointLoad();
     }
     public void QuitGame()
     {
         Application.Quit();
     }
 
-    public void Update()
+    private void Update()
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            if (uiToToggle.activeInHierarchy) uiToToggle.SetActive(false);
-            else uiToToggle.SetActive(true);
+            Pause();
+        }
+    }
+
+    private void Pause()
+    {
+        // Find either the Player or the Bear script, whichever exists
+        MonoBehaviour character = FindObjectOfType<Player>();
+        if (character == null)
+            character = FindObjectOfType<Bear>();
+
+        if (uiToToggle.activeInHierarchy)
+        {
+            // Disable the UI
+            uiToToggle.SetActive(false);
+            // Re-enable the player
+            character.enabled = true;
+        }
+        else
+        {
+            // Enable the UI
+            uiToToggle.SetActive(true);
+            // Disable the Player
+            character.enabled = false;
         }
     }
 }

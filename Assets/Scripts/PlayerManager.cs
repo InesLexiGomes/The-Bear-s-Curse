@@ -121,4 +121,10 @@ public class PlayerManager : MonoBehaviour
     {
         playerCoordsCheckpoint = coords;
     }
+
+    public void CheckpointLoad()
+    {
+        ArrowCount = arrowsAtCheckpoint;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
