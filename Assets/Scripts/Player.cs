@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         // When walking forwards unflip
         else if (rb.velocity.x > 0) transform.rotation = Quaternion.identity;
 
-        // When you press the fire button and you're not in bear form you shoot
+        // When you press the fire button you shoot
         if (Input.GetButtonUp("Fire1")) Shoot();
 
         // Animation
@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
         animator.SetBool("IsJumping", !IsGrounded() && !IsClimbing());
         animator.SetBool("IsSprinting", Input.GetButton("Sprint"));
         animator.SetBool("IsClimbing", IsClimbing());
-        animator.SetBool("IsShooting", Input.GetButton("Fire1"));
+        animator.SetBool("IsShooting", Input.GetButton("Fire1") && (PlayerManager.Instance.ArrowCount > 0));
         animator.SetBool("IsGrabbing", false);
     }
 
