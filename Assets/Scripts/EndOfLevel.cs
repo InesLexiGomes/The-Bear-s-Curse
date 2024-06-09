@@ -12,9 +12,13 @@ public class EndOfLevel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        // Sets the checkpoint to the next level's spawnpoint so when loading the player starts there
-        PlayerManager.Instance.SetPlayerCoordsAtCheckpoint(playerSpawn);
-        // Loads the next level
-        SceneManager.LoadScene(nextLevel);
-    }
+        // Checks if player has the key first
+        if (PlayerManager.Instance.hasKey)
+        {
+            // Sets the checkpoint to the next level's spawnpoint so when loading the player starts there
+            PlayerManager.Instance.SetPlayerCoordsAtCheckpoint(playerSpawn);
+            // Loads the next level
+            SceneManager.LoadScene(nextLevel);
+        }
+    }     
 }

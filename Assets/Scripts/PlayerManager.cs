@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour
 
     // Level transition and player usage data
     public int ArrowCount { get; private set; }
+    public bool hasKey = false;
 
     // Bear form variables
     [SerializeField] private int maxCooldownTime;
@@ -70,6 +71,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        hasKey = false;
         // Re-instantiate the player at the checkpoint position
         Instantiate(playerPrefab, playerCoordsCheckpoint, Quaternion.identity);
     }
