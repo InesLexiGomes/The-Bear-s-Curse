@@ -18,16 +18,18 @@ public class Checkpoint : MonoBehaviour
         if (player != null)
         {
             PlayerManager.Instance.SetPlayerCoordsAtCheckpoint(player.gameObject.transform.position);
+            // Sets the ammount of arrows the player had at the checkpoint
+            PlayerManager.Instance.SetArrowsAtCheckpoint(PlayerManager.Instance.ArrowCount);
+            // After setting the place where player will respawn the object gets destroyed 
+            Destroy(gameObject);
         }
         if (bear != null)
         {
             PlayerManager.Instance.SetPlayerCoordsAtCheckpoint(bear.gameObject.transform.position);
+            // Sets the ammount of arrows the player had at the checkpoint
+            PlayerManager.Instance.SetArrowsAtCheckpoint(PlayerManager.Instance.ArrowCount);
+            // After setting the place where player will respawn the object gets destroyed 
+            Destroy(gameObject);
         }
-
-        // Sets the ammount of arrows the player had at the checkpoint
-        PlayerManager.Instance.SetArrowsAtCheckpoint(PlayerManager.Instance.ArrowCount);
-
-        // After setting the place where player will respawn the object gets destroyed 
-        Destroy(gameObject);
     }
 }

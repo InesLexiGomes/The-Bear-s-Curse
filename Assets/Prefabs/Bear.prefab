@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultGravity: 10
   speed: 150
-  jumpSpeed: 300
+  jumpSpeed: 0
   maxJumpTime: 0.2
   groundCheck: {fileID: 5310392397741091542}
   groundCheckRadius: 5

@@ -647,6 +647,14 @@ PrefabInstance:
       propertyPath: nextLevel
       value: LastHall
       objectReference: {fileID: 0}
+    - target: {fileID: 2646833244344670117, guid: bb9f372fd72f51e44a85cdd645e2b7d7, type: 3}
+      propertyPath: playerSpawn.x
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646833244344670117, guid: bb9f372fd72f51e44a85cdd645e2b7d7, type: 3}
+      propertyPath: playerSpawn.y
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 3599289777800294972, guid: bb9f372fd72f51e44a85cdd645e2b7d7, type: 3}
       propertyPath: m_Name
       value: Door

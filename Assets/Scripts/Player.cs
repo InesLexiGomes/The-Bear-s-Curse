@@ -97,8 +97,6 @@ public class Player : MonoBehaviour
         animator.SetBool("IsSprinting", Input.GetButton("Sprint"));
         animator.SetBool("IsClimbing", IsClimbing());
         animator.SetBool("IsShooting", Input.GetButton("Fire1") && (PlayerManager.Instance.ArrowCount > 0));
-
-        isGrabbing = false;
     }
 
     private bool IsGrounded()
