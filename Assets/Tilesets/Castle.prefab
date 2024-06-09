@@ -140,11 +140,11 @@ Tilemap:
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 0a71aa25d2796c94fabf27074e5815bd, type: 2}
+    m_Data: {fileID: 11400000, guid: 019f66656868e784783dcc742142b18a, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 21c8f0b02e1a28547a3358f625725660, type: 2}
+    m_Data: {fileID: 11400000, guid: 0a0cabcb490775245932e92323158e71, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 5a10fe10ded3ab548b33a79dbdb47134, type: 2}
+    m_Data: {fileID: 11400000, guid: 7a40690fb7fca33459bd4ceb9efe5f16, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 78103e3cdb51b014a82d1bf3878760e7, type: 2}
   - m_RefCount: 1
@@ -182,6 +182,8 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 5
     m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -255,7 +257,7 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &5435620501800222318
+--- !u!114 &638595047137300182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

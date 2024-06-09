@@ -1387,6 +1387,63 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1001 &1414665274
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7022157744450652617, guid: a008914a658583344ae24619abd201d8, type: 3}
+      propertyPath: m_Name
+      value: Rope (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834991507566841774, guid: a008914a658583344ae24619abd201d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -60.55897
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834991507566841774, guid: a008914a658583344ae24619abd201d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 37.60811
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834991507566841774, guid: a008914a658583344ae24619abd201d8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834991507566841774, guid: a008914a658583344ae24619abd201d8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834991507566841774, guid: a008914a658583344ae24619abd201d8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834991507566841774, guid: a008914a658583344ae24619abd201d8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834991507566841774, guid: a008914a658583344ae24619abd201d8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834991507566841774, guid: a008914a658583344ae24619abd201d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834991507566841774, guid: a008914a658583344ae24619abd201d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834991507566841774, guid: a008914a658583344ae24619abd201d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a008914a658583344ae24619abd201d8, type: 3}
 --- !u!1 &1739403802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,11 +1605,11 @@ Tilemap:
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 0a71aa25d2796c94fabf27074e5815bd, type: 2}
+    m_Data: {fileID: 11400000, guid: 019f66656868e784783dcc742142b18a, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 21c8f0b02e1a28547a3358f625725660, type: 2}
+    m_Data: {fileID: 11400000, guid: 0a0cabcb490775245932e92323158e71, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 5a10fe10ded3ab548b33a79dbdb47134, type: 2}
+    m_Data: {fileID: 11400000, guid: 7a40690fb7fca33459bd4ceb9efe5f16, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 1857269606, guid: 9e339901afbbc284f85677e57064b550, type: 3}
@@ -1582,6 +1639,10 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 3
     m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 4.3098e-41, g: 4.3098e-41, b: 4.3098e-41, a: 4.3098e-41}
+  - m_RefCount: 0
+    m_Data: {r: 4.3098e-41, g: 4.3098e-41, b: 4.3098e-41, a: 4.3098e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2077,3 +2138,4 @@ SceneRoots:
   - {fileID: 7745749985160733675}
   - {fileID: 4544682823948659176}
   - {fileID: 494652386}
+  - {fileID: 1414665274}
