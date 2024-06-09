@@ -86,8 +86,8 @@ public class Player : MonoBehaviour
 
         // When you press the fire button you shoot
         if (Input.GetButtonUp("Fire1")) Shoot();
-        // Play the audio for shoting
-        if (Input.GetButtonDown("Fire1")) aimingAudioSource.Play();
+        // Play the audio for shooting
+        if (Input.GetButtonDown("Fire1") && (PlayerManager.Instance.ArrowCount > 0)) aimingAudioSource.Play();
 
         // Animation
         animator.SetFloat("AbsVelocityX", Mathf.Abs(currentVelocity.x)/100);
@@ -97,7 +97,8 @@ public class Player : MonoBehaviour
         animator.SetBool("IsSprinting", Input.GetButton("Sprint"));
         animator.SetBool("IsClimbing", IsClimbing());
         animator.SetBool("IsShooting", Input.GetButton("Fire1") && (PlayerManager.Instance.ArrowCount > 0));
-        animator.SetBool("IsGrabbing", false);
+
+        isGrabbing = false;
     }
 
     private bool IsGrounded()
