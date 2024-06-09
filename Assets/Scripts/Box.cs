@@ -12,6 +12,13 @@ public class Box : MonoBehaviour
     [SerializeField] private LayerMask groundCheckLayers;
     [SerializeField] private Transform ropeCheck;
 
+    // Variables for IsGrabbed method
+    [SerializeField] private Transform playerCheckF;
+    [SerializeField] private Transform playerCheckB;
+    [SerializeField] private int playerCheckRadius;
+    [SerializeField] private LayerMask playerCheckLayers;
+    private Vector2 currentPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +46,30 @@ public class Box : MonoBehaviour
 
     private bool IsGrabbed()
     {
-        return false;
+        // Sets default Value
+        currentPosition.x = rb.transform.position.x;
+
+        // Checks for an overlap in the playerCheck and Player Colliders
+        Collider2D playerCollider = Physics2D.OverlapCircle(playerCheckF.position, playerCheckRadius, playerCheckLayers);
+
+        if (playerCollider != null && Input.GetButton("Fire2"))
+        {
+            currentPosition.x = playerCollider.transform.position.x - 32;
+        }
+        // Checks for an overlap on the other side
+        else
+        {
+            playerCollider = Physics2D.OverlapCircle(playerCheckB.position, playerCheckRadius, playerCheckLayers);
+            if (playerCollider != null && Input.GetButton("Fire2"))
+            {
+                currentPosition.x = playerCollider.transform.position.x + 32;
+            }
+        }
+
+        rb.transform.position = new Vector2(currentPosition.x, rb.transform.position.y);
+
+
+        return (playerCollider != null && Input.GetButton("Fire2"));
     }
     private void OnDrawGizmosSelected()
     {
@@ -47,6 +77,8 @@ public class Box : MonoBehaviour
         {
             Gizmos.color = Color.green;
             Gizmos.DrawSphere(groundCheck.position, groundCheckRadius);
+            Gizmos.DrawSphere(playerCheckF.position, playerCheckRadius);
+            Gizmos.DrawSphere(playerCheckB.position, playerCheckRadius);
         }
     }
 }
