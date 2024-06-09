@@ -8,6 +8,7 @@ public class EndGame : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Destroy(PlayerManager.Instance);
+        PlayerManager.Instance.StopMusic();
         SceneManager.LoadScene("Main Menu");
     }
 }

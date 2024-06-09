@@ -19,6 +19,7 @@ public class PlayerManager : MonoBehaviour
     private Vector2 playerCoordsCheckpoint;
 
     // Level transition and player usage data
+    [SerializeField] private AudioSource music;
     public int ArrowCount { get; private set; }
     public bool hasKey = false;
 
@@ -128,5 +129,10 @@ public class PlayerManager : MonoBehaviour
     {
         ArrowCount = arrowsAtCheckpoint;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void StopMusic()
+    {
+        music.Stop();
     }
 }
