@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CamTrigger : MonoBehaviour
 {
-    [SerializeField] private GameObject camera;
+    [SerializeField] private GameObject targetCamera;
     [SerializeField] private Vector3 position;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        camera.transform.position = position;
+        targetCamera.transform.position = position;
     }
 }

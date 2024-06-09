@@ -13,6 +13,7 @@ public class Box : MonoBehaviour
     [SerializeField] private Transform ropeCheck;
 
     // Variables for IsGrabbed method
+    [SerializeField] private AudioSource boxaudio;
     [SerializeField] private Transform playerCheckF;
     [SerializeField] private Transform playerCheckB;
     [SerializeField] private int playerCheckRadius;
@@ -23,6 +24,7 @@ public class Box : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        boxaudio.loop = true;
     }
 
     // Update is called once per frame
@@ -33,6 +35,8 @@ public class Box : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Static;
         }
         else rb.bodyType = RigidbodyType2D.Dynamic;
+
+        if (!IsGrabbed()) boxaudio.Stop();
     }
     private bool IsGrounded()
     {
@@ -65,6 +69,8 @@ public class Box : MonoBehaviour
                 currentPosition.x = playerCollider.transform.position.x + 32;
             }
         }
+
+        if (playerCollider != null && Input.GetButtonDown("Fire2")) boxaudio.Play();
 
         rb.transform.position = new Vector2(currentPosition.x, rb.transform.position.y);
 

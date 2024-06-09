@@ -2104,7 +2104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c435bb8cce3a7bf41a29137202c99079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 1415042353}
+  targetCamera: {fileID: 1415042353}
   position: {x: 0, y: -288, z: -10}
 --- !u!61 &1554934619
 BoxCollider2D:

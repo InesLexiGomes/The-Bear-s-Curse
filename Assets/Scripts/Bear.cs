@@ -11,6 +11,7 @@ public class Bear : MonoBehaviour
 
     // Variables for movement
     [SerializeField] private int speed;
+    [SerializeField] private AudioSource footSteps;
     private Vector2 currentVelocity;
     private float deltaX;
 

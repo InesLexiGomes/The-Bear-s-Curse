@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     // Variables for movement
     [SerializeField] private int speed;
     [SerializeField] private float sprintMultiplier;
+    [SerializeField] private AudioSource runSound;
     private Vector2 currentVelocity;
     private float deltaX;
 
@@ -88,6 +89,9 @@ public class Player : MonoBehaviour
         if (Input.GetButtonUp("Fire1")) Shoot();
         // Play the audio for shooting
         if (Input.GetButtonDown("Fire1") && (PlayerManager.Instance.ArrowCount > 0)) aimingAudioSource.Play();
+
+        if (Input.GetButtonDown("Sprint") && IsGrounded()) runSound.Play();
+        if (!IsGrounded() | Input.GetButtonUp("Sprint")) runSound.Stop();
 
         // Animation
         animator.SetFloat("AbsVelocityX", Mathf.Abs(currentVelocity.x)/100);
