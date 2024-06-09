@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Hall1.unity
     guid: d584dac498612f4408070e5dc5c6cc30
   - enabled: 1
-    path: Assets/Scenes/Hall2.unity
+    path: Assets/Scenes/LastHall.unity
     guid: 84c503a7be621ac4a9d8bb2916b21426
   - enabled: 1
     path: Assets/Scenes/Hall3.unity
