@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform bowPoint;
     [SerializeField] private GameObject arrow;
+    [SerializeField] private AudioSource aimingAudioSource;
+
 
     private void Start()
     {
@@ -84,6 +86,8 @@ public class Player : MonoBehaviour
 
         // When you press the fire button you shoot
         if (Input.GetButtonUp("Fire1")) Shoot();
+        // Play the audio for shoting
+        if (Input.GetButtonDown("Fire1")) aimingAudioSource.Play();
 
         // Animation
         animator.SetFloat("AbsVelocityX", Mathf.Abs(currentVelocity.x)/100);
