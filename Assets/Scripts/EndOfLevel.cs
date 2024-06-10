@@ -17,6 +17,8 @@ public class EndOfLevel : MonoBehaviour
         {
             // Sets the checkpoint to the next level's spawnpoint so when loading the player starts there
             PlayerManager.Instance.SetPlayerCoordsAtCheckpoint(playerSpawn);
+            // Sets the ammount of arrows for the next Level
+            PlayerManager.Instance.SetArrowsAtCheckpoint(PlayerManager.Instance.ArrowCount);
             // Loads the next level
             SceneManager.LoadScene(nextLevel);
         }
